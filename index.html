@@ -8,27 +8,44 @@
 </head>
 <body>
   <main class="app">
-    <h1>Сборка PDF на A4</h1>
-    <p class="hint">Загрузите изображения (PNG или JPG). Каждое вписывается на отдельный лист A4 с сохранением пропорций. Файлы никуда не отправляются: PDF собирается в браузере.</p>
+    <h1>Сборка PDF и извлечение фото</h1>
+
+    <fieldset class="mode">
+      <legend>Режим</legend>
+      <label><input type="radio" name="mode" value="build" checked> Фото → PDF</label>
+      <label><input type="radio" name="mode" value="extract"> PDF → фото</label>
+    </fieldset>
+
+    <p class="hint" id="hint"></p>
 
     <label class="file-btn">
-      Выбрать изображения
+      <span id="fileBtnText">Выбрать изображения</span>
       <input type="file" id="fileInput" accept="image/png,image/jpeg" multiple>
     </label>
 
     <ul id="list" class="list"></ul>
     <p id="empty" class="empty">Изображения пока не выбраны</p>
 
-    <div class="options">
+    <div class="options" id="buildOptions">
       <label class="field">
         Поля, мм
         <input type="number" id="margin" value="10" min="0" max="50" step="1">
       </label>
+      <label class="field">
+        Ориентация листа
+        <select id="orientation">
+          <option value="landscape" selected>Альбомная (горизонтальная)</option>
+          <option value="portrait">Книжная (вертикальная)</option>
+          <option value="auto">Авто (по каждому фото)</option>
+        </select>
+      </label>
     </div>
 
-    <button id="build" class="primary" type="button" disabled>Создать PDF</button>
+    <button id="action" class="primary" type="button" disabled>Создать PDF</button>
     <p id="status" class="status" role="status"></p>
     <a id="download" class="download" hidden>Скачать PDF</a>
+
+    <section id="results" class="results"></section>
   </main>
   <script type="module" src="src/app.js"></script>
 </body>
