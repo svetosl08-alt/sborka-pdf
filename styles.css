@@ -205,6 +205,56 @@ h1 {
   display: none;
 }
 
+.mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  border: 1px solid #c9c2b8;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.mode legend {
+  padding: 0 4px;
+  font-size: 0.9rem;
+  color: #57606a;
+}
+
+.mode label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 24px;
+}
+
+.results-title {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.save {
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #2e7d4f;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.save:hover {
+  background: #256741;
+}
+
 @media (max-width: 360px) {
   .list li {
     flex-wrap: wrap;
