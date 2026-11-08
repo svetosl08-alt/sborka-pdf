@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сборка PDF на A4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Сборка PDF на A4</h1>
+    <p class="hint">Загрузите изображения (PNG или JPG). Каждое вписывается на отдельный лист A4 с сохранением пропорций. Файлы никуда не отправляются: PDF собирается в браузере.</p>
+
+    <label class="file-btn">
+      Выбрать изображения
+      <input type="file" id="fileInput" accept="image/png,image/jpeg" multiple>
+    </label>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty">Изображения пока не выбраны</p>
+
+    <div class="options">
+      <label class="field">
+        Поля, мм
+        <input type="number" id="margin" value="10" min="0" max="50" step="1">
+      </label>
+    </div>
+
+    <button id="build" class="primary" type="button" disabled>Создать PDF</button>
+    <p id="status" class="status" role="status"></p>
+    <a id="download" class="download" hidden>Скачать PDF</a>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
